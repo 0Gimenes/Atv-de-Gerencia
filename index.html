@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade de Gerêcia</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #calculadora { width: 200px; }
+        input, button { width: 40px; margin: 2px; }
+    </style>
 </head>
 <body>
 <h1>Atividade de Gerência</h1>
@@ -12,5 +17,45 @@
 <img src="Imagem/GS.webp"/>
 <img src="Imagem/WW.jpg"/>
 <script type="module" src="main.js"></script>
+
+<div id="calculadora">
+    <input type="text" id="resultado" disabled>
+    <br>
+    <button onclick="adicionar('1')">1</button>
+    <button onclick="adicionar('2')">2</button>
+    <button onclick="adicionar('3')">3</button>
+    <button onclick="adicionar('+')">+</button>
+    <br>
+    <button onclick="adicionar('4')">4</button>
+    <button onclick="adicionar('5')">5</button>
+    <button onclick="adicionar('6')">6</button>
+    <button onclick="adicionar('-')">-</button>
+    <br>
+    <button onclick="adicionar('7')">7</button>
+    <button onclick="adicionar('8')">8</button>
+    <button onclick="adicionar('9')">9</button>
+    <button onclick="adicionar('*')">*</button>
+    <br>
+    <button onclick="calcular()">=</button>
+    <button onclick="adicionar('0')">0</button>
+    <button onclick="limpar()">C</button>
+    <button onclick="adicionar('/')">/</button>
+</div>
+
+<script>
+    function adicionar(valor) {
+        document.getElementById('resultado').value += valor;
+    }
+
+    function calcular() {
+        const resultado = eval(document.getElementById('resultado').value);
+        document.getElementById('resultado').value = resultado;
+    }
+
+    function limpar() {
+        document.getElementById('resultado').value = '';
+    }
+</script>
+
 </body>
 </html>
